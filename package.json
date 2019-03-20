@@ -1,0 +1,67 @@
+{
+  "name": "ez-loader",
+  "version": "1.0.0",
+  "description": "A magic and powerful load indicator made with Javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "./node_modules/.bin/mocha src/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha src/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc npm test",
+    "lint": "eslint src/**/*.js",
+    "build": "./node_modules/.bin/webpack --colors --progress",
+    "watch": "./node_modules/.bin/webpack --colors --progress --watch"
+  },
+  "nyc": {
+    "functions": 80,
+    "lines": 80,
+    "check-coverage": true,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "src/**/*.spec.js"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015-native-modules": "^6.9.4",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.0.0-rc.14",
+    "mocha": "^5.2.0",
+    "node-fetch": "^2.2.0",
+    "nyc": "^13.0.1",
+    "sinon": "^6.3.4",
+    "sinon-chai": "^3.2.0",
+    "sinon-stub-promise": "^4.0.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josejuniordev/ez-loader.git"
+  },
+  "keywords": [
+    "loader",
+    "indicator",
+    "loader",
+    "loading",
+    "javascript",
+    "css"
+  ],
+  "author": "José Junior",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josejuniordev/ez-loader/issues"
+  },
+  "homepage": "https://github.com/josejuniordev/ez-loader#readme"
+}
