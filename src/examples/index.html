@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste EzLoader</title>
+</head>
+<body>
+    <style >
+        button {
+            background: red;
+            font-size: 16px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .ez-local-loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ez-local-loader:before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px dashed currentColor;
+            margin-right: 10px;
+            animation: rotation 2s linear infinite;
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <button id="botao1" data-loader-label="salvando">teste de salvar</button>
+    <script src="../lib/EzLoader.js"></script>
+<script>
+    const button = document.getElementById("botao1");
+    button.addEventListener('click', () => {
+        ezLoader.showLoader(button);
+
+        setTimeout(() => ezLoader.closeLoader(button), 15000);
+    });
+</script>
+</body>
+</html>

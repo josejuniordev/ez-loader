@@ -1,4 +1,4 @@
-var vnLoader = (function() {
+var ezLoader = (function() {
     var storageBox = {};
     var isInitialized = false;
 
@@ -145,8 +145,8 @@ var vnLoader = (function() {
                 var newElement = _createElement({
                     elementName: 'div',
                     properties: {
-                        class: 'vn-local-loader'
-                            + (isGlobalLoader ? ' vn-global-loader' : '')
+                        class: 'ez-local-loader'
+                            + (isGlobalLoader ? ' ez-global-loader' : '')
                             + (isAnExternalSpinner ? ' has-external-spinner' : '')
                             + (loaderLabel == 'false' ? ' has-not-label' : ''),
                         text: loaderLabel != 'false' ? loaderLabel : '',
@@ -160,6 +160,7 @@ var vnLoader = (function() {
                             + 'box-sizing: ' + elementStyles.boxSizing + ';'
                             + 'text-align: ' + elementStyles.textAlign + ';'
                             + 'font-size: ' + elementStyles.fontSize + ';'
+                            + 'font-family: ' + elementStyles.fontFamily + ';'
                             + 'border-radius: ' + elementStyles.borderRadius + ';'
                             + 'position: ' + (elementStyles.position === 'fixed' ? 'fixed' : 'absolute') + ';'
                             + 'top: ' + buttonPosition.top + 'px;'
@@ -174,7 +175,7 @@ var vnLoader = (function() {
                         elementName: 'div',
                         parentNode: newElement,
                         properties: {
-                            class: 'vn-spinner-loader' + (spinnerSize === 'small' ? ' is-small' : ''),
+                            class: 'ez-spinner-loader' + (spinnerSize === 'small' ? ' is-small' : ''),
                             style: 'right: -' + spinnerOffset + 'px;'
                                 + (isAnExternalSpinner ? 'position: absolute;' : '')
                                 + (dataLoaderLabel && dataLoaderLabel.length ? '' : 'margin: 0;')
